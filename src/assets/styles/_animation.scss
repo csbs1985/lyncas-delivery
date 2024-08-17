@@ -1,0 +1,14 @@
+.sizeBarAniamtion {
+  animation: sizeBarAniamtion 3s;
+}
+
+@keyframes sizeBarAniamtion {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: attr(data-width-final);
+  }
+}
+

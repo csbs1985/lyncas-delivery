@@ -1,0 +1,20 @@
+button {
+  cursor: pointer;
+  border-radius: .5rem;
+  font-weight: bold;
+  background-color: white;
+  padding: .5rem 1rem ;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: black;
+    background-color: var(--color-element);
+  }
+
+  &:disabled {
+    background-color: var(--color-element);
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

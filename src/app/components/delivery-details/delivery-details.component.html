@@ -1,0 +1,53 @@
+<section class="p-4 w-full bg-white rounded-2xl flex flex-col gap-8">
+  <h2 class="font-bold uppercase">Detalhes da entrega</h2>
+
+  @if(!content){
+  <div class="w-full text-center">Selecione uma entrega na tabela acima.</div>
+  } @else {
+  <div class="w-full flex flex-col md:flex-row gap-8">
+    <div class="flex flex-col gap-2">
+      <label>Documento</label>
+      <p>{{ content.documento }}</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label>Status da entrega</label>
+      <div class="flex items-center gap-2">
+        <span class="rounded-full w-3 h-3" [class.back-delivered]="content.status_entrega === StatusDelivery!.ENTREGUE"
+          [class.back-failure]="content.status_entrega === StatusDelivery!.INSUCESSO"
+          [class.back-pending]="content.status_entrega === StatusDelivery!.PENDENTE"></span>
+        <p>{{ content.status_entrega }}</p>
+      </div>
+    </div>
+
+    <div class=" flex flex-col gap-2">
+      <label>Motorista</label>
+      <p>{{ content.motorista.nome }}</p>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-col md:flex-row gap-8">
+    <div class="flex flex-col gap-2">
+      <label>Cliente origem</label>
+      <p>{{ content.cliente_origem.nome }}</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label>Endereço origem</label>
+      <p>{{ content.cliente_origem.endereco }} - {{ content.cliente_origem.bairro }} - {{
+        content.cliente_origem.cidade }}</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label>Cliente destino</label>
+      <p>{{ content.cliente_destino.nome }}</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label>Endereço destino</label>
+      <p>{{ content.cliente_destino.endereco }} - {{ content.cliente_destino.bairro }} - {{
+        content.cliente_destino.cidade }}</p>
+    </div>
+  </div>
+  }
+</section>

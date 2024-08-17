@@ -1,0 +1,25 @@
+.back {
+  &-primary {
+    background-color: var(--color-primary);
+  }
+
+  &-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  &-delivered {
+    background-color: var(--color-delivered);
+  }
+
+  &-failure {
+    background-color: var(--color-failure);
+  }
+
+  &-pending {
+    background-color: var(--color-pending);
+  }
+
+  &-total {
+    background-color: var(--color-total);
+  }
+}

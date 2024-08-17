@@ -1,0 +1,15 @@
+<section class="w-full flex flex-col md:flex-row gap-4">
+  @for (item of deliveryCard; track item.id) {
+  <div class="card w-full md:max-w-[300px] p-4 rounded-2xl"
+    [class.back-primary]="item.status_entrega === StatusDelivery.TOTAL"
+    [class.back-delivered]="item.status_entrega === StatusDelivery.ENTREGUE"
+    [class.back-failure]="item.status_entrega === StatusDelivery.INSUCESSO"
+    [class.back-pending]="item.status_entrega === StatusDelivery.PENDENTE">
+    <p class="text-white">Entregas</p>
+
+    <h3 class="font-bold text-white">{{ item.status_entrega }}</h3>
+
+    <h4 class="text-white">{{ item.count }}</h4>
+  </div>
+  }
+</section>

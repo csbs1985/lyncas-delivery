@@ -1,0 +1,27 @@
+<section class="w-full p-4 bg-white rounded-2xl flex flex-col gap-4">
+  <h2 class="font-bold uppercase">Entregas por bairro</h2>
+
+  <table class="w-full">
+    <thead>
+      <tr>
+        @for(item of headers; track $index){
+        <th class="font-bold text-left p-2 px-4">
+          {{item}}
+        </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of rows; track $index) {
+      <tr>
+        @for (column of headers; track $index) {
+        <td class="p-2 px-4">
+          {{row[column]}}
+        </td>
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</section>

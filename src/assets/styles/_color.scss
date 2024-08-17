@@ -1,0 +1,22 @@
+:root {
+  --color-primary: #4326C4;
+  --color-secondary: #D40511;
+
+  --color-delivered: #39DD85;
+  --color-failure: #FE9393;
+  --color-pending: #FFCD00;
+
+  --color-base: #F1F3F5;
+  --color-element: #F6F8FF;
+  --color-text: #212529;
+}
+
+.color {
+  &-primary {
+    color: var(--color-primary);
+  }
+
+  &-secondary {
+    color: var(--color-secondary);
+  }
+}

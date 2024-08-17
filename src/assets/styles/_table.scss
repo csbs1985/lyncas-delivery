@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+
+  thead {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-element);
+    }
+
+    &:active {
+      color: var(--color-primary);
+    }
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}

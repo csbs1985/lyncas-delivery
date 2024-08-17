@@ -1,0 +1,13 @@
+<section class="flex flex-col gap-8 p-8">
+
+  <lyncas-delivery-card [content]="deliveries!" class="w-full"></lyncas-delivery-card>
+
+  <lyncas-delivery-driver [content]="deliveries!"></lyncas-delivery-driver>
+
+  <div class="w-full flex flex-col md:flex-row gap-8">
+    <lyncas-delivery-fail [content]="deliveries!" class="w-full md:w-1/3"></lyncas-delivery-fail>
+
+    <lyncas-delivery-district [content]="deliveries!" class="w-full md:w-2/3"></lyncas-delivery-district>
+  </div>
+
+</section>
