@@ -9,6 +9,7 @@
 2.  Downloading the Project
 3.  Installing Dependencies
 4.  Starting the Project
+5.  Demo
 
 ## **Prerequisites**
 
@@ -37,3 +38,8 @@ This command will install all the dependencies listed in the  `package.json`  fi
 This command will start the development server and make the application available at  `http://localhost:4200`.
 
 2.  Open a web browser and navigate to  `http://localhost:4200`  to view the application.
+
+## **Demo**
+Run demo project  in Firebase Hosting
+
+`https://lyncas-delivery.web.app/`
