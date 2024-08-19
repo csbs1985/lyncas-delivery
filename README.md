@@ -42,4 +42,4 @@ This command will start the development server and make the application availabl
 ## **Demo**
 Run demo project  in Firebase Hosting
 
-`https://lyncas-delivery.web.app/`
+[https://lyncas-delivery.web.app/](https://lyncas-delivery.web.app/)
