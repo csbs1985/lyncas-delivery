@@ -24,8 +24,8 @@ export class DeleiveryListComponent implements OnInit {
   statusFilter?: string;
 
   ngOnInit(): void {
-    this.deliveries= [];
-    this.filteredDeliveries= [];
+    this.deliveries = [];
+    this.filteredDeliveries = [];
 
     this.currentPage = 0;
     this.totalPage = 1;
@@ -41,9 +41,13 @@ export class DeleiveryListComponent implements OnInit {
     this._deliveryService.getDeliveries().subscribe((data: IDelivery[]) => {
       this.deliveries = data;
       this.totalPage = data.length / 10;
-      this.filterDeliveries();
-      this.filteredDeliveries = this.filteredDeliveries!.slice(0, 10);
+      this.initPagination();
     });
+  }
+
+  initPagination(): void {
+    this.filterDeliveries();
+    this.filteredDeliveries = this.filteredDeliveries!.slice(0, 10);
   }
 
   filterDeliveries(): void {
@@ -57,7 +61,7 @@ export class DeleiveryListComponent implements OnInit {
 
   paginateDeliveries(): void {
     const currentPage = this.currentPage;
-    const start = (this.currentPage !- 1) * this.itemsPerPage!;
+    const start = (this.currentPage! - 1) * this.itemsPerPage!;
     const end = start + this.itemsPerPage!;
 
     if (start >= 0 && end <= this.deliveries!.length) {
@@ -74,15 +78,13 @@ export class DeleiveryListComponent implements OnInit {
 
   onStatusFilterChange(status: string): void {
     this.statusFilter = status;
-    this.filterDeliveries();
-    this.filteredDeliveries = this.filteredDeliveries!.slice(0, 10);
+    this.initPagination();
     this.paginateDeliveries();
   }
 
   onDriverFilterChange(filter: Event): void {
     this.driverFilter = filter.toString();
-    this.filterDeliveries();
-    this.filteredDeliveries = this.filteredDeliveries!.slice(0, 10);
+    this.initPagination();
     this.paginateDeliveries();
   }
 

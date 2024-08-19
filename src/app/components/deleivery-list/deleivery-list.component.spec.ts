@@ -9,8 +9,9 @@ describe('DeleiveryListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DeleiveryListComponent, FormsModule],
+      imports: [FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
+      declarations: [DeleiveryListComponent]
     });
     fixture = TestBed.createComponent(DeleiveryListComponent);
     component = fixture.componentInstance;
@@ -18,5 +19,13 @@ describe('DeleiveryListComponent', () => {
 
   it('can load instance', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('initPagination', () => {
+    it('makes expected calls', () => {
+      spyOn(component, 'filterDeliveries').and.callThrough();
+      component.initPagination();
+      expect(component.filterDeliveries).toHaveBeenCalled();
+    });
   });
 });
